@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+{% block Title %} WELCOME | {{ block.super }} {% endblock %}
+
+{% block content %}
+
+
+{%if request.user.is_authenticated %}
+   <h1 class ="lead text_allign_class" >Wecome staff</h1>
+<table class="table">
+   {%for instance in queryset%}
+        <tr><td>{{instance}},{{instance.full_name}}</td></tr>
+   {%endfor%}
+ </table>
+{%else %}
+<div class="jumbotron">
+<div class="container">
+<!-- Main component for a primary marketing message or call to action -->
+<div class="row">
+
+  <div class="col-sm-7">
+    <h1>Incredible</h1>
+    <p>Welcome to the best website on earth , I'm the best programmer on earth and
+      i'm going to work in google so join my web site now to get more
+      information about how awsomeness i am =D <p>
+    <a class="btn btn-lg btn-primary" href="/accounts/register/" role="button">Join Us &raquo;</a>
+    </p>
+  </div>
+  <div class="col-sm-5">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/sFukyIIM1XI" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div> <!-- /container -->
+
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+
+  <div class="col-xs-3 pull-right">
+
+          <p class='lead text_allign_class'>{{ title }}</p>
+
+          <form action='' method='POST'>{% csrf_token %}
+              {{ form|crispy }}
+              <input class="btn btn-primary "  type="submit" value="Sign up" />
+              <!--<input class="btn btn-success btn-xs" type="submit" value="Success" />
+              <button type="button" class="btn btn-sm">Default</button>
+              <button type="button" class="btn btn-info ">Info</button>
+              <input type="submit" class="btn btn-warning btn-lg" value="WARNING"/>
+              <button type="button" class="btn btn-danger">Danger</button>
+              <button type="button" class="btn btn-link">Link</button>-->
+          </form>
+
+    </div>
+    <div class="col-xs-3">
+    <p class='lead text_allign_class'>Django &amp; bootstrap
+        <img src = '{%static "img/django.png"%}' class="img-responsive"/>
+      </p>
+    </div>
+
+    <div class="col-xs-3">
+    <p class='lead text_allign_class'>See you Later
+      <br><br>
+      <i style="color:black" class="fa fa-reddit-alien fa-5x" ></i>
+     </p>
+
+    </div>
+
+    <div class="col-xs-3">
+    <p class='lead text_allign_class'>Nothing At all
+      <br><br>
+      <span class="fa-stack fa-4x">
+        <i style="color:black" class="fa fa-spinner fa-stack-2x "></i>
+        <i  class="fa fa-github-alt fa-stack-1x"></i>
+    </p>
+    </div>
+
+</div>
+</div>
+{%endif %}
+
+{% endblock %}

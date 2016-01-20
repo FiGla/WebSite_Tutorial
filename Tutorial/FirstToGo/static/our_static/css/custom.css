@@ -1,0 +1,44 @@
+.text_allign_class {
+  text-align: center;
+  color: grey;
+}
+
+.navbar-static-top {
+  background-color: #FFFDDB ;
+  margin-bottom: 0px;
+  border-color: #F1EA9C;
+
+}
+.navbar-default .navbar-brand {
+  color: #000000;
+}
+.navbar-default .navbar-brand:hover {
+  color: #000000;
+
+}
+.jumbotron {
+  background-color :#FFFDDB;
+}
+.btn-primary {
+background-color: #CA0000;
+border-color: #AA0000;
+}
+.btn-primary:hover {
+background-color: #9B0707;
+}
+.navbar-default .navbar-nav>li>a{
+  color: #C71515;
+}
+.navbar-default .navbar-nav>li>a:hover{
+  color: #B10202;
+}
+.navbar-default .navbar-toggle {
+  background-color:transparent !important;
+}
+.navbar-toggle:hover {
+  background-color: #F1EA9C !important;
+}
+
+.navbar-toggle {
+  background-color: #FFFDDB !important;
+}
